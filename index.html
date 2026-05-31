@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatApp - Mensajería en Vivo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Sidebar de contactos -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h1>ChatApp</h1>
+                <div class="header-icons">
+                    <button id="btnNewChat" title="Nuevo chat" class="icon-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Buscar contacto...">
+            </div>
+            
+            <div class="contacts-list" id="contactsList">
+                <!-- Los contactos se generarán con JavaScript -->
+            </div>
+        </div>
+        
+        <!-- Área principal de chat -->
+        <div class="main-chat">
+            <!-- Header del chat -->
+            <div class="chat-header" id="chatHeader">
+                <div class="chat-header-info">
+                    <h2 id="contactName">Selecciona un contacto</h2>
+                    <p id="contactStatus">online</p>
+                </div>
+                <div class="header-icons">
+                    <button id="btnCall" title="Llamada" class="icon-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                    </button>
+                    <button id="btnVideo" title="Videollamada" class="icon-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Área de mensajes -->
+            <div class="messages-container" id="messagesContainer">
+                <!-- Los mensajes se generarán con JavaScript -->
+            </div>
+            
+            <!-- Input de mensaje -->
+            <div class="message-input-area">
+                <button id="btnAttach" class="attach-btn" title="Adjuntar archivo">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 0 19.8 4.3M22 12.5a10 10 0 0 0-19.8-4.2"/>
+                    </svg>
+                </button>
+                <input type="text" id="messageInput" placeholder="Escribe un mensaje...">
+                <button id="btnEmoji" class="emoji-btn" title="Emoji">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <circle cx="12" cy="12" r="10"/><circle cx="9" cy="9" r="1.5"/><circle cx="15" cy="9" r="1.5"/><path d="M9 15c.83.67 2.04 1 3 1s2.17-.33 3-1"/>
+                    </svg>
+                </button>
+                <button id="btnSend" class="send-btn" title="Enviar">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal para nuevo chat -->
+    <div id="newChatModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Iniciar nuevo chat</h3>
+                <button class="close-btn">&times;</button>
+            </div>
+            <input type="text" id="newContactInput" placeholder="Nombre de usuario...">
+            <button id="btnCreateChat" class="modal-btn">Crear chat</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
